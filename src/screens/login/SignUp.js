@@ -7,17 +7,17 @@ import TabComponent from '../../components/TabComponent';
 const SignUp = (props) => {
     const [tabs, setTab] = useState(['전화번호', '이메일']);
     const [tabIndex, setTabIndex] = useState([0]);
-
-    const confirmButton = () => {
-        const navigation = useNavigation();
+    const handleTab =() => {
+        setTab(tabs);
     };
-
 
     return (
         <View style={style.root}>
             <View style={style.content}>
                 <View style={{ flexDirection: 'row', marginBottom: 15 }}>
-                    <TabComponent onPress={() => setTabIndex(tabIndex)} selected={tabIndex} label={tabs}></TabComponent>
+                {
+                <TabComponent onPress={() => setTabIndex(tabIndex)} selected={tabIndex} label={tabs}></TabComponent>
+                }
                 </View>
 
                 {/* 정보 입력 영역 */}
