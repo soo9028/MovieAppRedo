@@ -30,6 +30,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Intro from './Intro';
 import LoginNav from './src/navigation/LoginNav';
 import 'react-native-gesture-handler';
+import MainDrawerNav from './src/navigation/MainDrawerNav';
 
 const rootStack = createStackNavigator();
 
@@ -46,6 +47,7 @@ const App: () => Node = () => {
       <rootStack.Navigator screenOptions={{ headerShown: false }}>
         <rootStack.Screen name='Intro' component={Intro}></rootStack.Screen>
         <rootStack.Screen name='LoginNav' component={LoginNav}></rootStack.Screen>
+        <rootStack.Screen name='MainDrawerNav' component={MainDrawerNav}></rootStack.Screen>
       </rootStack.Navigator>
     </NavigationContainer>
   );

@@ -7,13 +7,13 @@ export default Intro = (props) => {
 
     AsyncStorage.getItem('email')
         .then((value) => {
-            if (value) props.navigation.replace('MainDrawerNav')
+            if (value) props.navigation.replace('LoginNav')
             else props.navigation.replace('LoginNav')
         })
 
     return (
         <View style={style.root}>
-            <ActivityIndicator size="large" color="indigo" />
+            <ActivityIndicator size="large" color="green" />
         </View>
     );
 };

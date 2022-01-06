@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import  AsyncStorage  from 'react-native';
-import InputComponent from '../../components/InputComponent';
-import {Text, StyleSheet, View, Button} from 'react-native';
+import { Text, StyleSheet, View, Button } from 'react-native';
+import InputComponent from '../../login_components/InputComponent';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default Login = (props) => {
+export default LoginScreen = (props) => {
     return (
         <View style={style.root}>
             <View style={style.content}>
 
                 <Text style={style.logo}>2021{'\n'}Movie Rank</Text>
+
 
                 <InputComponent onChangeText={(value) => { }} secureTextEntry={false} placeholder='Email'></InputComponent>
                 <InputComponent onChangeText={(value) => { }} secureTextEntry={true} placeholder='Password'></InputComponent>
@@ -16,7 +17,7 @@ export default Login = (props) => {
                 <Text style={style.resetPW}>Reset Password</Text>
 
                 <View style={{ width: 200, marginBottom: 24 }}>
-                    <Button onpPress={login} title='Login' color='#3796EF'></Button>
+                    <Button onPress={login} title='로그인' color='#3796EF'></Button>
                 </View>
 
                 <Text>
@@ -31,15 +32,16 @@ export default Login = (props) => {
 
 
     );
+
 };
 
-const login = () => {
-    AsyncStorage.setItem('email', 'android@mrhi.com')
-        .then(() => {
-            this.props.navigation.navigate('MainDrawerNav')
-        })
-}
 
+const login = () => {
+    AsyncStorage.setItem('email', 'soo9028@gmail.com')
+        .then(() => {
+            props.navigation.navigate('SignUp')
+        })
+};
 
 
 
@@ -81,11 +83,11 @@ const style = StyleSheet.create({
     signuplink: {
         color: '#3796EF'
     },
-    content:{
-        flex:1, 
-        justifyContent:'center',
-        alignItems:'center',
-        padding:32,
+    content: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 32,
     }
 
 });
