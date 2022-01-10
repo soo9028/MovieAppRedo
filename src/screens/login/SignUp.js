@@ -7,16 +7,13 @@ import TabComponent from '../../login_components/TabComponent'
 const SignUp = (props) => {
     const [tabs, setTab] = useState(['전화번호', '이메일']);
     const [tabIndex, setTabIndex] = useState([0]);
-    const handleTab = () => {
-        setTab(tabs);
-    };
 
     return (
         <View style={style.root}>
             <View style={style.content}>
                 <View style={{ flexDirection: 'row', marginBottom: 15 }}>
                     {
-                        <TabComponent onPress={() => setTabIndex(tabIndex)} selected={tabIndex} label={tabs}></TabComponent>
+                        <TabComponent onPress={() => setTabIndex(tabIndex)} selected={tabIndex} label={tabs[tabIndex]}></TabComponent>
                     }
                 </View>
 
